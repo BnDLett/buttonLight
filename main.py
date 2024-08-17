@@ -2,8 +2,9 @@
 # import Light
 import RPi.GPIO as GPIO
 import ipaddress
-from Discovery import Discovery
-from Light import Light
+
+from WizLight.Discovery import Discovery
+from WizLight.Light import Light
 from exceptions import LightNotFound
 
 BOUNCE_BACK_TIME: int = 1000
@@ -50,4 +51,4 @@ if __name__ == "__main__":
         raise LightNotFound("Light was NOT found.")
 
     GPIO_PIN_NUMBER: int = get_pin_number()
-    main(GPIO_PIN_NUMBER. lights[0])
+    main(GPIO_PIN_NUMBER, lights[0])
