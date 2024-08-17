@@ -1,0 +1,2 @@
+class LightNotFound(Exception):
+    pass
