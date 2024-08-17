@@ -19,7 +19,7 @@ def get_pin_number() -> int:
     return pin_number
 
 
-def button_callback():
+def button_callback(channel):
     print("Button was pushed!")
 
 
