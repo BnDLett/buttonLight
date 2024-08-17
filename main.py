@@ -8,12 +8,15 @@ def get_pin_number() -> int:
     Gets the pin number from the user's input.
     :return: integer representing the pin number
     """
+    pin_number: int = 0
     try:
-        pin_number = input("Type in the pin that the button uses:\n> ")
-        int(pin_number)
+        pin_number_str = input("Type in the pin that the button uses:\n> ")
+        pin_number = int(pin_number_str)
     except ValueError:
         print("The value typed in was not able to be converted into an integer. Ensure that you've typed it correctly.")
         get_pin_number()
+
+    return pin_number
 
 
 def button_callback():
