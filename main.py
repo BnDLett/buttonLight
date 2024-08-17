@@ -1,7 +1,7 @@
 # import Discovery
 # import Light
 import RPi.GPIO as GPIO
-BOUNCE_BACK_TIME: int = 30
+BOUNCE_BACK_TIME: int = 1000
 
 
 def get_pin_number() -> int:
