@@ -26,7 +26,7 @@ def get_pin_number() -> int:
     return pin_number
 
 
-def button_callback(light: Light):
+def button_callback(channel, light: Light):
     light.trigger_state()
 
 
@@ -35,7 +35,7 @@ def main(pin_number: int, light: Light):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin_number, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-    GPIO.add_event_detect(pin_number, GPIO.RISING, lambda: button_callback(light), BOUNCE_BACK_TIME)
+    GPIO.add_event_detect(pin_number, GPIO.RISING, lambda channel: button_callback(channel, light), BOUNCE_BACK_TIME)
 
     input("Press enter to kill the program.")
     GPIO.cleanup()
