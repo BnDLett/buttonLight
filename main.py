@@ -3,8 +3,8 @@
 import RPi.GPIO as GPIO
 import ipaddress
 
-from WizLight.Discovery import Discovery
-from WizLight.Light import Light
+from Discovery import Discovery
+from Light import Light
 from exceptions import LightNotFound
 
 BOUNCE_BACK_TIME: int = 1000
