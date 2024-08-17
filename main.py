@@ -2,7 +2,7 @@
 # import Light
 import RPi.GPIO as GPIO
 
-GPIO_PIN: int = 14
+GPIO_PIN: int = 23
 
 
 def main():
