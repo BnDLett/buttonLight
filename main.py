@@ -7,7 +7,7 @@ from Discovery import Discovery
 from Light import Light
 from exceptions import LightNotFound
 
-BOUNCE_BACK_TIME: int = 1000
+BOUNCE_BACK_TIME: int = 30
 
 
 def get_pin_number() -> int:
