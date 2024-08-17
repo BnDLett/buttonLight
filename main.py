@@ -1,6 +1,7 @@
 # import Discovery
 # import Light
 import RPi.GPIO as GPIO
+BOUNCE_BACK_TIME: int = 30
 
 
 def get_pin_number() -> int:
@@ -28,7 +29,7 @@ def main(pin_number: int):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin_number, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-    GPIO.add_event_detect(pin_number, GPIO.RISING, callback=button_callback)
+    GPIO.add_event_detect(pin_number, GPIO.RISING, button_callback, BOUNCE_BACK_TIME)
 
     input("Press enter to kill the program.")
     GPIO.cleanup()
