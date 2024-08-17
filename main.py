@@ -13,3 +13,7 @@ def main():
     while True:
         if GPIO.input(10) == GPIO.HIGH:
             print("Button was pushed!")
+
+
+if __name__ == "__main__":
+    main()
