@@ -43,12 +43,12 @@ def main(pin_number: int, light: Light):
 
 if __name__ == "__main__":
     discoverer = Discovery(ipaddress.IPv4Address("10.42.0.0"))
-    lights = discoverer.get_lights()
+    discoverer.get_lights()
 
-    print(lights[0].get_state())
-
-    if len(lights == 0):
+    if len(discoverer.results) == 0:
         raise LightNotFound("Light was NOT found.")
 
+    print(discoverer.results[0].get_state())
+
     GPIO_PIN_NUMBER: int = get_pin_number()
-    main(GPIO_PIN_NUMBER, lights[0])
+    main(GPIO_PIN_NUMBER, discoverer.results[0])
